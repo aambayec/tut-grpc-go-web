@@ -3,6 +3,7 @@
 - mysql
 - [golang-migrate](https://github.com/golang-migrate/migrate)
 - [go-playground-validator](github.com/go-playground/validator)
+- [xorm](https://github.com/go-xorm/xorm)
 
 ## Dependency Installation
 
