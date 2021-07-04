@@ -14,10 +14,10 @@ install:
 		github.com/gogo/protobuf/protoc-gen-gogoslick \
 		github.com/gogo/protobuf/gogoproto \
 		github.com/DATA-DOG/go-sqlmock \
-		github.com/onsi/ginkgo \
+		github.com/onsi/ginkgo/ginkgo \
+		github.com/go-sql-driver/mysql \
 		github.com/onsi/gomega/... \
 		github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock
-		
 
 clean:
 	rm ./pb/**/*.pb.go

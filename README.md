@@ -2,8 +2,10 @@
 
 - mysql
 - [golang-migrate](https://github.com/golang-migrate/migrate)
-- [go-playground-validator](github.com/go-playground/validator)
-- [xorm](https://github.com/go-xorm/xorm)
+- [go-playground/validator](github.com/go-playground/validator)
+- [go-xorm/xorm](https://github.com/go-xorm/xorm)
+- [onsi/ginkgo](github.com/onsi/ginkgo/ginkgo)
+- [DATA-DOG/go-sqlmock](https://github.com/DATA-DOG/go-sqlmock)
 
 ## Dependency Installation
 
@@ -47,4 +49,20 @@ migrate create -dir migrations -ext sql create_users_table
 # run migrate up/down
 migrate -path ./migrations -database "mysql://root:Ulyanin123@/tut_grpc" -verbose up
 migrate -path ./migrations -database "mysql://root:Ulyanin123@/tut_grpc" -verbose down
+```
+
+## Test
+
+```shell
+# cd to the folder you want to have testing
+cd repos
+
+# to init test file
+ginkgo bootstrap
+
+# to test one
+ginkgo -v -failFast --focus="UsersRepo"
+
+# to test all
+ginkgo -r -failFast
 ```
