@@ -11,7 +11,7 @@ func init() {
 
 	// Users
 	validator.RegisterStructValidation(func(sl vCop.StructLevel) {
-		r := sl.Current().Interface().(*CreateUserRequest)
+		r := sl.Current().Interface().(CreateUserRequest)
 
 		if r.GetNewUser() == nil {
 			sl.ReportError("NewUser", "newuser", "NewUser", "valid-newuser", "")
@@ -36,7 +36,7 @@ func init() {
 	}, CreateUserRequest{})
 
 	validator.RegisterStructValidation(func(sl vCop.StructLevel) {
-		r := sl.Current().Interface().(*FindByIdRequest)
+		r := sl.Current().Interface().(FindByIdRequest)
 
 		if r.GetId() == 0 {
 			sl.ReportError("ID", "id", "ID", "valid-id", "")
@@ -45,7 +45,7 @@ func init() {
 	}, FindByIdRequest{})
 
 	validator.RegisterStructValidation(func(sl vCop.StructLevel) {
-		r := sl.Current().Interface().(*FindByEmailRequest)
+		r := sl.Current().Interface().(FindByEmailRequest)
 
 		if len(r.GetEmail()) == 0 {
 			sl.ReportError("Email", "email", "Email", "valid-email", "")
@@ -54,7 +54,7 @@ func init() {
 	}, FindByEmailRequest{})
 
 	validator.RegisterStructValidation(func(sl vCop.StructLevel) {
-		r := sl.Current().Interface().(*UpdateUserRequest)
+		r := sl.Current().Interface().(UpdateUserRequest)
 
 		if r.GetId() == 0 {
 			sl.ReportError("ID", "id", "ID", "valid-id", "")
@@ -64,7 +64,7 @@ func init() {
 
 	// Auth
 	validator.RegisterStructValidation(func(sl vCop.StructLevel) {
-		r := sl.Current().Interface().(*LoginRequest)
+		r := sl.Current().Interface().(LoginRequest)
 
 		if len(r.GetEmail()) == 0 {
 			sl.ReportError("Email", "email", "Email", "valid-email", "")
