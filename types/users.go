@@ -3,6 +3,7 @@ package types
 import (
 	"fmt"
 
+	"github.com/aambayec/tut-grpc-go-web/pb"
 	"golang.org/x/crypto/bcrypt"
 )
 
@@ -25,10 +26,12 @@ type User struct {
 	Visible bool `json:"visible" xorm:"visible" schema:"visible"`
 }
 
+// TableName - the table when using xorm
 func (u *User) TableName() string {
 	return "users"
 }
 
+// NewUser - creates a new user from a temp user
 func NewUser(nu *TempUser) (user *User, err error) {
 	if nu.Password != nu.ConfirmPassword {
 		err = fmt.Errorf("password and confirm password do not match")
@@ -50,6 +53,7 @@ func NewUser(nu *TempUser) (user *User, err error) {
 	return
 }
 
+// SetPassword - use bcrypt to set the password hash
 func(u *User) SetPassword(password string) error {
 	hash, err := bcrypt.GenerateFromPassword([]byte(password), bcrypt.DefaultCost)
 	if err != nil{
@@ -60,6 +64,7 @@ func(u *User) SetPassword(password string) error {
 	return nil
 }
 
+// Authenticate - authenticates a password against the stored hash
 func (u *User) Authenticate(password string) error {
 	if !u.Visible {
 		return fmt.Errorf("user is inactive")
@@ -70,4 +75,16 @@ func (u *User) Authenticate(password string) error {
 	}
 
 	return nil
+}
+
+func (u *User) ToProtobuf() (nu *pb.User) {
+	nu = new(pb.User)
+
+	nu.Id = u.ID
+	nu.FirstName = u.FirstName
+	nu.LastName = u.LastName
+	nu.Email = u.Email
+	nu.Visible = u.Visible
+
+	return
 }

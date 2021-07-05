@@ -6,6 +6,7 @@
 - [go-xorm/xorm](https://github.com/go-xorm/xorm)
 - [onsi/ginkgo](github.com/onsi/ginkgo/ginkgo)
 - [DATA-DOG/go-sqlmock](https://github.com/DATA-DOG/go-sqlmock)
+- [Mockgen](https://github.com/golang/mock)
 
 ## Dependency Installation
 
@@ -53,6 +54,8 @@ migrate -path ./migrations -database "mysql://root:Ulyanin123@/tut_grpc" -verbos
 
 ## Test
 
+ginkgo
+
 ```shell
 # cd to the folder you want to have testing
 cd repos
@@ -65,4 +68,20 @@ ginkgo -v -failFast --focus="UsersRepo"
 
 # to test all
 ginkgo -r -failFast
+```
+
+mockgen
+
+```shell
+# install mockgen
+go get github.com/golang/mock/mockgen
+mockgen --version
+
+# create mock file
+touch repos/generateMock.sh
+# change sh file restrictions
+chmod +x repos/generateMock.sh
+# edit the sh file
+# run the sh file to generate mock files of the repo
+repos/generateMock.sh
 ```

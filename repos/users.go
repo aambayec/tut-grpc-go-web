@@ -10,7 +10,7 @@ import (
 // UsersRepo - the users repo interface
 type UsersRepo interface {
 	Create(*types.User) error
-	FindByID(int64) (*types.User, error)
+	FindById(int64) (*types.User, error)
 	FindByEmail(string) (*types.User, error)
 	Update(*types.User) (error)
 }
@@ -36,7 +36,7 @@ func (u usersRepo) Create(user *types.User) (err error) {
 	return
 }
 
-func (u usersRepo) FindByID(id int64) (user *types.User, err error) {
+func (u usersRepo) FindById(id int64) (user *types.User, err error) {
 	if id <=0 {
 		err = fmt.Errorf("valid positive ID is required to find a user")
 		return
