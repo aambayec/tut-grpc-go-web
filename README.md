@@ -122,5 +122,6 @@ chmod +x ~/go/bin/protoc-gen-grpc-web
 npm install -g @vue/cli
 vue create client-example
 cd client-example
-npm install grpc grpc-web --save
+npm install grpc grpc-web google-protobuf --save
+npm run serve
 ```
