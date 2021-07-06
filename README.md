@@ -14,6 +14,7 @@
 
 ```shell
 sudo apt install mysql-server
+mysql server start
 mysql -u root -p
 
 # need to run this due to error 'Access denied for user 'root'@'localhost''
@@ -85,3 +86,20 @@ chmod +x repos/generateMock.sh
 # run the sh file to generate mock files of the repo
 repos/generateMock.sh
 ```
+
+## Evans
+
+- [Evans Client](https://github.com/ktr0731/evans) for testing gRPC. See [tutorial](https://www.youtube.com/watch?v=ag9Z8jFuY9A&list=PLy_6D98if3UJd5hxWNfAqKMr15HZqFnqf&index=19) for more details.
+
+### How to use
+
+`go run main.go`
+`evans -r reply -p 50051`
+`show package`
+`package users`
+`show service`
+`show message`
+`desc CreateUserRequest`
+`service V1Users`
+`call Create`
+`ctrl d` to stop repeated input
