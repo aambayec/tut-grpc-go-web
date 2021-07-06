@@ -115,3 +115,12 @@ curl https://github.com/grpc/grpc-web/releases/download/1.2.1/protoc-gen-grpc-we
 # change file restriction
 chmod +x ~/go/bin/protoc-gen-grpc-web
 ```
+
+## Client App - Vuejs
+
+```shell
+npm install -g @vue/cli
+vue create client-example
+cd client-example
+npm install grpc grpc-web --save
+```

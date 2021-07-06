@@ -13,3 +13,28 @@
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+
+
+client-example/.DS_Store
+client-example/node_modules
+client-example/dist
+
+
+# local env files
+client-example/.env.local
+client-example/.env.*.local
+
+# Log files
+client-example/npm-debug.log*
+client-example/yarn-debug.log*
+client-example/yarn-error.log*
+client-example/pnpm-debug.log*
+
+# Editor directories and files
+client-example/.idea
+client-example/.vscode
+client-example/*.suo
+client-example/*.ntvs*
+client-example/*.njsproj
+client-example/*.sln
+client-example/*.sw?
