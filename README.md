@@ -103,3 +103,15 @@ repos/generateMock.sh
 `service V1Users`
 `call Create`
 `ctrl d` to stop repeated input
+
+## GRPC Web
+
+Install Protoc Gen GRPC Web from <https://github.com/grpc/grpc-web/releases>.
+
+```shell
+# download, make sure to change to the latest version.
+curl https://github.com/grpc/grpc-web/releases/download/1.2.1/protoc-gen-grpc-web-1.2.1-linux-x86_64.sha256 > ~/go/bin/protoc-gen-grpc-web
+
+# change file restriction
+chmod +x ~/go/bin/protoc-gen-grpc-web
+```

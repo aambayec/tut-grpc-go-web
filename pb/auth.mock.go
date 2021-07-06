@@ -20,7 +20,7 @@ type V1AuthMock struct{}
 func (m *V1AuthMock) Login(ctx context.Context, req *LoginRequest) (*LoginReply, error) {
 	res :=
 		&LoginReply{
-			Token: "voluptates",
+			Token: "optio",
 		}
 	return res, nil
 }

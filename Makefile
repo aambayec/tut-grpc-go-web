@@ -1,6 +1,6 @@
 START=$(pwd)
 
-protoc: protoc-go protoc-js
+protoc: clean protoc-go protoc-js
 
 protoc-go:
 	protoc -I pb/v1/ \
@@ -29,7 +29,7 @@ install:
 		github.com/SafetyCulture/s12-proto/protobuf/protoc-gen-gogrpcmock
 
 clean:
-	rm ./pb/**/*.pb.go
+	rm ./pb/*.pb.go
 	rm -rf pb/js
 
 test:
